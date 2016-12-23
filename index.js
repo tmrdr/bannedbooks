@@ -29,5 +29,12 @@ app.get("/show", function(req,res){
   });
 });
 
+//get one book
+app.get("/:id", function(req, res){
+  db.book.findById(req.params.id).then(function(book){
+  res.render("one", {book: book});
+  });
+});
+
 //listen
 app.listen(3000);
