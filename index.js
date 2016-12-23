@@ -36,5 +36,12 @@ app.get("/:id", function(req, res){
   });
 });
 
+//get random book ////////// need to migrate to a seperate js file, math.random not allowed in this sacred place
+app.get("/:id", function(req, res){
+  db.article.findById(req.params.id).then(function(book){
+  res.render("one", {book: book});
+  });
+});
+
 //listen
 app.listen(3000);

@@ -7,11 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.TEXT,
     description_of_the_cases: DataTypes.TEXT
   }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
+    timestamps: false
   });
   return book;
 };
