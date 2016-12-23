@@ -1,0 +1,14 @@
+<h3 class="text-center">List of all books</h3>
+
+<% books.forEach(function(book){ %>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4><p>
+            <a href="<%= book.id %>">
+            <%= book.title %> </a>
+          </p></h4>
+
+          
+        </div>
+    </div>
+<% }) %>
