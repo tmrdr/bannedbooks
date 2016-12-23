@@ -29,16 +29,17 @@ app.get("/show", function(req,res){
   });
 });
 
-//get one book
-app.get("/:id", function(req, res){
-  db.book.findById(req.params.id).then(function(book){
-  res.render("one", {book: book});
+//get random book
+app.get("/random", function(req, res){
+  db.book.findAll().then(function(books){
+    var index = Math.floor(Math.random() * books.length);
+    res.redirect("/" + index);
   });
 });
 
-//get random book ////////// need to migrate to a seperate js file, math.random not allowed in this sacred place
+//get one book
 app.get("/:id", function(req, res){
-  db.article.findById(req.params.id).then(function(book){
+  db.book.findById(req.params.id).then(function(book){
   res.render("one", {book: book});
   });
 });
